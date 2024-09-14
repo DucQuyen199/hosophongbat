@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.search-form,
+.add-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-form input,
+.add-form input,
+.add-form textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.search-form .search-input {
+    border-radius: 5px 0 0 5px;
+}
+
+.search-form .search-button {
+    border-radius: 0 5px 5px 0;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-left: none;
+}
+
+.search-form .search-button:hover {
+    background-color: #0056b3;
+}
+
+.add-form .submit-button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+.add-form .submit-button:hover {
+    background-color: #218838;
+}
+
+/* Table Styles */
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.transaction-table th,
+.transaction-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.transaction-table th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.transaction-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.transaction-table tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Pagination Styles */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination-link {
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.pagination-link:hover {
+    background-color: #f2f2f2;
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}

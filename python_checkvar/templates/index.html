@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Transactions</h1>
+        <form method="get" action="/" class="search-form">
+            <input type="text" name="search" value="{{ search_query }}" placeholder="Search description" class="search-input">
+            <input type="submit" value="Search" class="search-button">
+        </form>
+
+        {% if transactions %}
+            <table class="transaction-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Transaction ID</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for transaction in transactions %}
+                        <tr>
+                            <td>{{ transaction.id }}</td>
+                            <td>{{ transaction.transaction_id }}</td>
+                            <td>{{ transaction.amount }}</td>
+                            <td>{{ transaction.description }}</td>
+                            <td>{{ transaction.date }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                {% if page > 1 %}
+                    <a href="?search={{ search_query }}&page={{ page - 1 }}" class="pagination-link">Previous</a>
+                {% endif %}
+                {% if page < total_pages %}
+                    <a href="?search={{ search_query }}&page={{ page + 1 }}" class="pagination-link">Next</a>
+                {% endif %}
+            </div>
+        {% else %}
+            <p class="no-results">No results found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

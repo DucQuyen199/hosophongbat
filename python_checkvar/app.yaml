@@ -1,0 +1,10 @@
+runtime: python311
+
+handlers:
+- url: /.*
+  script: auto
+
+env_variables:
+  DATABASE_URL: 'postgresql://user:password@hostname:port/dbname'
+  # Hoặc cho cơ sở dữ liệu khác
+  # DATABASE_URL: 'mysql://user:password@hostname:port/dbname'
